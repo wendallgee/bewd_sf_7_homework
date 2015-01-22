@@ -1,0 +1,22 @@
+
+<div class="col-md-12 text-center"> 
+
+<h1>Artists</h1>
+
+<div class="row">
+	<% @artists.each do |artist| %>
+		<div class="col-md-4">
+			<div class="artist-container">
+				<div class="artist-title-mask"></div>
+				<div class="artist-title"><%= artist.name %> </div>
+				<%= image_tag(artist.pic_url, class:'artist-image') unless artist.pic_url.nil?%> 
+			    <p class="artist-actions"> <%= link_to "Show", artist_path(artist), :class => 'btn btn-xs btn-warning'  %> 
+		    	<%= link_to "Edit", edit_artist_path(artist), :class => 'btn btn-xs btn-default'%>
+		    	<%= link_to 'Delete', artist, method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
+				</p>
+			</div>	
+		</div>
+	<% end %>
+</div>
+
+</div>

@@ -1,0 +1,7 @@
+<h1>Record Label Index</h1>
+<p>
+Record Label:
+</p>
+<% @record_labels.each do |record_label| %>
+<%= link_to "#{record_label.name}", record_label_path(record_label) %><br>
+<% end %>
