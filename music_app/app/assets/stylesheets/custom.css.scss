@@ -1,0 +1,47 @@
+
+@import "bootstrap";
+
+body { margin-top: 71px; }
+
+.artist-image {
+	width: 100%;
+	}
+.artist-container {
+	position: relative;
+	overflow: hidden; 
+	height: 250px;
+}
+.artist-title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: left;
+	color: #fff;
+	font-size: 13px;
+	line-height: 30px;
+	height: 30px;
+	padding: 0 10px;
+}
+.artist-title-mask {
+		position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: left;
+	height: 30px;
+	background: #000;
+	opacity: .5;
+}
+
+.artist-title-mask:hover, .artist-title-mask:focus { 
+	opacity: .7 
+}
+
+.artist-actions {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
