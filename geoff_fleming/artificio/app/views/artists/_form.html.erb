@@ -1,0 +1,28 @@
+<div class="col-md-8">
+
+<div class="well">
+	<%= simple_form_for(@artist, html: {:class => 'form-horizontal'} ) do |f| %> 
+
+	<%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Artist Name'} %> 
+	</br>
+	<%= f.input :contact, label: false, input_html: {:class => 'form-control', placeholder: 'Your email'} %>
+	</br> 
+
+		<%= f.input :biopic, label: false, input_html: {:class => 'form-control', placeholder: 'Link to Your Bio Picture - example: http://www.myimage.com'} %>
+	</br>
+
+	<%= f.attachment_field :image, input_html: {:class => 'form-control'} %>
+	</br>
+	
+
+	<%= f.input :bio, label: false, input_html: {:class => 'form-control', placeholder: 'Your Biography'} %>
+	</br>
+	
+
+	<div style="text-align:center;">
+		<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-danger' %> 
+	</div>
+<%end %> 
+
+</div>
+</div>

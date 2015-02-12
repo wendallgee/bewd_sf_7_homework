@@ -3,5 +3,5 @@
 Record Label:
 </p>
 <% @record_labels.each do |record_label| %>
-<%= link_to "#{record_label.name}", record_label_path(record_label) %><br>
+<%= link_to "#{record_label.name}", edit_record_label_path(record_label) %><br>
 <% end %>

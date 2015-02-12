@@ -8,9 +8,13 @@ class RecordLabelsController < ApplicationController
 	end
 
 	def edit
+		@record_label = get_record_label
 	end
 
 	def update
+		@record_label = get_record_label
+  		@record_label.update(record_labels)
+  		redirect_to record_label_path(@record_label)
 	end
 
 
@@ -27,5 +31,7 @@ class RecordLabelsController < ApplicationController
 			@record_label = RecordLabel.find(params[:id])
 		end
 end
+
+
 
 

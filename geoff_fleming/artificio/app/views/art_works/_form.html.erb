@@ -1,0 +1,29 @@
+<div class="col-md-8">
+
+<div class="well">
+
+	<%= simple_form_for(@artwork, html: {:class => 'form-horizontal'} ) do |f| %> 
+
+	<%= f.input :name, label: false, input_html: {:class => 'form-control', placeholder: 'Title'} %> 
+	</br>
+
+	<%= f.input :image_url, label: false, input_html: {:class => 'form-control', placeholder: 'Link to Your Art Work - example: http://www.myart.jpg'} %>
+	</br>
+
+	<%= f.association :artist %>
+	</br>
+
+	<%= f.attachment_field :image, input_html: {:class => 'form-control'} %>
+	
+
+
+	</br>
+
+	<div style="text-align:center;">
+		<%= f.submit "Submit".html_safe, :class => 'btn btn-lg btn-danger' %> 
+		
+	</div>
+<%end %> 
+
+</div>
+</div>

@@ -1,0 +1,32 @@
+
+
+<% @artists.each do |artist| %>
+	<table>
+		<tr>
+			<td><p>
+				<div class="media-left media middle">
+					<% if artist.image_id? %>
+					<%= link_to image_tag(attachment_url(artist, :image), :class => 'media-object thumbnail'), artist_path(artist) %>
+					<%else %>
+					<%= link_to image_tag("#{artist.biopic}", :class =>"media-object thumbnail"), artist_path(artist) unless artist.biopic.blank?  %>
+					<%end %> 
+					
+				  </div>
+				  
+				  <div class="media-body">
+				  		<h4 class="media-heading"><%= link_to "#{artist.name}", artist_path(artist) %></h4><br>
+				  		 	<%= simple_format"#{artist.bio}" %></br>
+				  </div>
+				  
+				</div>
+
+			</p></td>
+		</tr>
+	</table>
+
+<% end %>
+
+
+
+
+

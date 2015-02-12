@@ -1,0 +1,16 @@
+
+<% @artworks.each do |art_work| %>
+	<div class="col-xs-6 col-md-3 art-container">
+		
+				<%= image_tag art_work.image_url, class: "thumbnail" "img-responsive" %>
+				<a href="<%= art_work_path(art_work) %>">
+					<%= image_tag attachment_url art_work, :image %>
+				</a>
+
+			
+			    <p class="artwork-actions"> <%= link_to "#{art_work.name}", art_work_path(art_work), :class => 'btn btn-xs btn-warning'  %> 
+			    </p>
+		
+	</div>
+		
+<% end %>

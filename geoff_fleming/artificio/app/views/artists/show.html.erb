@@ -1,0 +1,25 @@
+<div class="col-lg-10">
+
+<%= image_tag(@artist.biopic, :class =>"container img-responsive col-xs-4") %>
+<h1><%= "#{@artist.name}" %></h1> 
+<b>Contact:</b> <%= mail_to"#{@artist.contact}", "#{@artist.contact}" %>
+<p><%= simple_format"#{@artist.bio}" %></p>
+
+<br/>
+
+	     	<% @art_works.each do |artwork| %>
+			 <%= artwork.name %>
+			 <div class="art-container">
+			 <%= image_tag attachment_url(artwork, :image), :class =>"img-responsive" %>
+			 </div>
+		 	<% end %>
+	
+</div>
+
+<% if current_user %>
+<%= link_to "Edit", edit_artist_path, :class => 'btn btn-xs btn-default'%>
+<%= link_to 'Delete', artist_path(@artist), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-xs btn-danger' %>
+		    	
+<% else %> ""
+<% end %>
+

@@ -1,0 +1,12 @@
+
+<div class="row">
+
+<div class="col-xs-4">
+<h1> <%= @artwork.name %> </h1>
+<p> <%=link_to "Contact Artist", artist_path(@artwork.artist.id), :class => 'btn btn-lg btn-default' %>  </p>
+</div>
+
+<div class="col-xs-8">
+<%= link_to image_tag(attachment_url(@artwork, :image), :class =>"img-responsive img-round col-xs-4"), art_work_path(@artwork) %>
+<%= link_to image_tag(@artwork.image_url), art_work_path(@artwork) %>
+</div>

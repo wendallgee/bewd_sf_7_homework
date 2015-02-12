@@ -1,0 +1,34 @@
+  <nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <b><%= link_to "ARTificio", root_path, :class =>"navbar-brand" %></b> 
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Artists", artists_path %></li>
+        
+        <li class="active"><%= link_to "Artwork", art_works_path %></li>
+        
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li> <%= link_to "You're In!", root_path %></li>
+        <li> <%= link_to "Sign Out", sign_out_path, :method => :delete %> </li>
+      <% else %>
+        <li class="active"><%=link_to "Sign Up", sign_up_path %> </li>
+        <li><%=link_to "Sign In", sign_in_path %></li>
+      <% end %> 
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+   
